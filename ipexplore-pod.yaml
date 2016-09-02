@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ipexplore
+  labels:
+    app: ipexplore
+spec:
+  containers:
+    - name: ipexplore
+      image: quay.io/coffeepac/ipexplore:latest
+      ports:
+      - containerPort: 8080
