@@ -3,7 +3,7 @@ set -ex
 
 NIC_MORE_TRAFFIC=$(grep -vE "lo:|face|Inter" /proc/net/dev | sort -n -k 2 | tail -1 | awk '{ sub (":", "", $1); print $1 }')
 if command -v ip; then
-  if [ ${NETWORK_AUTO_DETECT} -eq 1 ]; then
+  if [ 1 -eq 1 ]; then
     MON_IP=$(ip -6 -o a s $NIC_MORE_TRAFFIC | awk '{ sub ("/..", "", $4); print $4 }')
     if [ -z "$MON_IP" ]; then
       MON_IP=$(ip -4 -o a s $NIC_MORE_TRAFFIC | awk '{ sub ("/..", "", $4); print $4 }')
