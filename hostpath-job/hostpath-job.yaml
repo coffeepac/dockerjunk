@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: hostpath-job
+spec:
+  template:
+    metadata:
+      name: hostpath-job
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: hostpathjob
+        image: quay.io/coffeepac/hostpath-job:latest
+        volumeMounts:
+        - mountPath: /etc-on-disk
+          name: etcondisk
+      volumes:
+      - name: etcondisk
+        hostPath:
+          path: /etc
