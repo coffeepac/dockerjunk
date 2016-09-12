@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
     - name: ipexplore
-      image: quay.io/coffeepac/ipexplore:latest
+      image: quay.io/coffeepac/ceph-networking-test:latest
       ports:
       - containerPort: 8080

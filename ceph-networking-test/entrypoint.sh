@@ -1,6 +1,7 @@
 #!/bin/bash
 set -ex
 
+NETWORK_AUTO_DETECT=1
 NIC_MORE_TRAFFIC=$(grep -vE "lo:|face|Inter" /proc/net/dev | sort -n -k 2 | tail -1 | awk '{ sub (":", "", $1); print $1 }')
 if command -v ip; then
   if [ ${NETWORK_AUTO_DETECT} -eq 1 ]; then
